@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submission Data</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+  <h1>Submission Data</h1>
+  
+  <% if (admissionData) { %>
+    <h2>Your Admission Form Details</h2>
+    <p><strong>Name:</strong> <%= admissionData.name %></p>
+    <p><strong>Email:</strong> <%= admissionData.email %></p>
+    <p><strong>Course:</strong> <%= admissionData.course %></p>
+    <p><strong>Address:</strong> <%= admissionData.address %></p>
+    <p><strong>Phone:</strong> <%= admissionData.phone %></p>
+    <p><strong>Submitted At:</strong> <%= admissionData.submittedAt.toLocaleString() %></p>
+  <% } else if (message) { %>
+    <p><%= message %></p>
+  <% } else if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+
+  <br>
+  <a href="/auth/signout">Sign Out</a> | <a href="/auth/home">Go Home</a>
+</div>
+</body>
+</html>

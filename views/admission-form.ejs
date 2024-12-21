@@ -1,0 +1,41 @@
+<!-- admission-form.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission Form</title>
+  <link rel="stylesheet" href="/css/admission.css">
+</head>
+<body>
+  <div class="container">
+  <h1>Admission Form</h1>
+  <p>Welcome, <%= user.name %>! Please fill out the admission form below</p>
+
+  <!-- Admission form -->
+  <form action="/auth/admission-form" method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="<%= user.name %>" disabled>
+    <br>
+    
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" value="<%= user.email %>" disabled>
+    <br>
+
+    <label for="course">Course</label>
+    <input type="text" id="course" name="course" required>
+    <br>
+
+    <label for="address">Address</label>
+    <input type="text" id="address" name="address" required>
+    <br>
+
+    <label for="phone">Phone</label>
+    <input type="text" id="phone" name="phone" required>
+    <br>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+</body>
+</html>
